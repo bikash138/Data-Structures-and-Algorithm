@@ -1,1 +1,21 @@
+# Build artifacts
+*.exe
+*.out
+*.o
+*.obj
+/build/
+/bin/
+/Debug/
+/Release/
+
+# VS Code / Code runner temp file
+tempCodeRunnerFile.cpp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and editor temp files
+*.log
+*.tmp
 .vscode
