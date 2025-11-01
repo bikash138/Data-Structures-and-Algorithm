@@ -88,7 +88,5 @@ int main(){
     // printInOrder(root);
     // printPostOrder(root);
     // levelOrderTraversal(root);
-    int ans = diameterOfTree(root);
-    cout << ans << " ";
     return 0;
 }
