@@ -22,12 +22,11 @@ void printTopView(Node *root){
         //map.find() -> Returns the pointer if the key(hd) is present
         //map.end() -> It itself gets returned if the key(hd) is not found
         //Hence, if map.find(hd) == map.end() means key not found
-        if(hdToNodeMapping.find(hd) == hdToNodeMapping.end()){
             //If key not found, then create one and map it to frontNode ka data
             //As it if top view hence at every hd only first found Node will be stored
             //hence we are not overwriting the mapping after being created once
             hdToNodeMapping[hd] = frontNode->data;
-        }
+        
         //Now process the child of the frontNode
         if(frontNode->left != NULL){
             //Now push the left child of frontNode and decrement the hd
