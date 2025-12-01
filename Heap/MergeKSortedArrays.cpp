@@ -68,6 +68,7 @@ void mergeKSortedArray(int arr[][4], int k, int n, vector<int> &ans){
       Info* newInfo = new Info(arr[topRow][topCol+1], topRow, topCol+1);
       pq.push(newInfo);
     }
+    delete temp;
   }
 }
 
