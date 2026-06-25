@@ -18,6 +18,9 @@ class Node {
       }
       cout << endl;
     }
+    ~Node(){
+      cout << "Destructor Called";
+    }
 }
 
 void insertNodeAtHead(Node* &head, Node* &tail, int data){
@@ -88,5 +91,53 @@ void insertAtAnyPosition(Node* &head, Node* &tail, int data, int position) {
 
   newNode->next = temp->next;
   temp->next = newNode;
+}
+
+void deleteNodeFromLL(Node* &head, Node* &tail, int position) {
+  //Empty LL check
+  if(head == NULL){
+    cout << "Empty LL";
+    return;
+  }
+
+  int length = getLengthofLinkedList(head);
+
+  //Check for single node
+  if(head == tail) {
+    delete head;
+    head = NULL;
+    tail = NULL;
+    return;
+  }
+
+  //Delete the head node
+  if(position == 1){
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+  } //Delte the tail node
+  else if(position == length) {
+    Node* prev = head;
+    while(prev->next->next != NULL){
+      prev = prev->next;
+    }
+    Node* temp = tail;
+    prev->next = NULL;
+    tail = prev;
+    delete temp;
+  } //Delete the middle node
+  else{
+    Node* prev = head;
+    int i = 1;
+    while(i < position - 1){
+      prev = prev->next;
+      i++;
+    }
+    Node* curr = prev->next;
+
+    prev->next = curr->next;
+    delete curr;
+  }
+  
 }
 
