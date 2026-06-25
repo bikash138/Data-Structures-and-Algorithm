@@ -50,3 +50,43 @@ void insertNodeAtTail(Node* &head, Node* &tail, int data) {
   }
 }
 
+int getLengthofLinkedList(Node* head) {
+  int count = 0;
+  Node* temp = head;
+  while(temp != NULL) {
+    count++;
+    temp = temp->next;
+  }
+  return count;
+}
+
+void insertAtAnyPosition(Node* &head, Node* &tail, int data, int position) {
+  int length = getLengthofLinkedList(head);
+  if(position < 1 || position > length){
+    cout << "Invalid Position";
+    return;
+  }
+  if(position == 1) {
+    insertNodeAtHead(head, tail, data);
+    return;
+  }
+  if(position == length){
+    insertNodeAtTail(head, tail, data);
+    return;
+  }
+  Node* newNode = new Node(data);
+  Node* temp = head; 
+
+  int i = 1;
+  //Traverse the LL till one postion prior
+  //And after each increament shift the temp pointer
+  //That means temp is ahead of i hence we used postion - 1
+  while( i < postition - 1) {
+    temp = temp->next;
+    i++;
+  }
+
+  newNode->next = temp->next;
+  temp->next = newNode;
+}
+
