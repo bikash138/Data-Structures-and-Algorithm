@@ -26,7 +26,7 @@ class Node {
     }
 };
 
-//Q1. Reverse a Linked List
+//Reverse a Linked List USing Iterative Approach
 void reverseLL (Node* &head) {
     Node* prev = NULL;
     Node* curr = head;
