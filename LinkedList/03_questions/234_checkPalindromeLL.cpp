@@ -71,4 +71,5 @@ bool checkPalindromeLL(Node* &head) {
       headOfReversedLL = headOfReversedLL->next;
     }
     return true;
+    ghjff
 }
