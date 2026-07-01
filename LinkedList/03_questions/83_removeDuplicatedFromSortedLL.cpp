@@ -49,3 +49,5 @@ Node* headOfModifiedLL(Node* &head) {
     }
     return head;
 }
+
+//T.C: As we are tarversing to each node hence O(n)
