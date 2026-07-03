@@ -1,0 +1,78 @@
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+class Node {
+  public:
+    int data;
+    Node* next;
+
+    Node() {
+      this->next = NULL;
+    }
+    Node(int data) {
+      this->data = data;
+      this->next = NULL;
+    }
+    void print(Node* head) {
+      Node* temp = head;
+      while(temp != NULL) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+      }
+      cout << endl;
+    }
+    ~Node(){
+      cout << "Destructor Called";
+    }
+};
+
+//By simple method using Maps
+Node* detectCycle(Node *head) {
+    unordered_map<Node*, bool> visited;
+
+    Node* temp = head;
+
+    while(temp != NULL){
+        if(visited[temp] == true) return temp;
+        visited[temp] = true;
+        temp = temp->next;
+    }
+    return NULL;
+}
+
+//Without Using the Map and reducing the Space Complexity
+/*
+Algorithm says:
+ - Using the fast and slow poninter forst find the meeting point
+ - This will confirm the presence of cycle in the LL
+ - Now the algo says that keep the slow pointer at this meeting point
+ - And shift the fast pointer to the head of the LL
+ - Now sart moving both the pointer step by step (1 step at a time)
+ - The point they again meet will be the starting node of the cycle  
+*/
+
+Node* detect(Node* head) {
+    Node* fast = head;
+    Node* slow = head;
+
+    bool hasCycle = false;
+
+    while(fast != NULL && fast->next != NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(fast == slow) {
+            hasCycle = true;
+            break;
+        };
+    }
+
+    if(!hasCycle) return NULL;
+
+    fast = head;
+    while(fast != slow ){
+        fast = fast->next;
+        slow = slow->next;
+    }
+    return fast;
+}
