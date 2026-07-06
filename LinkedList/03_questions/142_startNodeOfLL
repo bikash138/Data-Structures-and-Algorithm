@@ -63,7 +63,7 @@ Node* detect(Node* head) {
         fast = fast->next->next;
         if(fast == slow) {
             hasCycle = true;
-            break;
+            break; 
         };
     }
 
