@@ -24,6 +24,8 @@ bool isValidParenthesis(string s) {
             else return false;
         }
     }
+    //THis is very Important step which I forgot 
+    //Always check if the stack is empty otherwise presence of brackets will make it invalid parenthesis 
     return st.empty();
 }
 
