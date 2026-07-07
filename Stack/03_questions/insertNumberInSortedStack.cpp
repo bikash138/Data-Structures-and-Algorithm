@@ -18,3 +18,5 @@ void insertNumberInSortedStack(stack<int> &s, int data) {
 
     s.push(top);
 }
+
+//T.c -> O(n) as in worse case we need to pop all the elements from the stack
