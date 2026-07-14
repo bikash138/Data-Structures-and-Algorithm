@@ -1,6 +1,5 @@
 #include<iostream>
 #include<queue>
-#include<stack>
 using namespace std;
 
 queue<int> reverseAQueue(queue<int> &q) {
