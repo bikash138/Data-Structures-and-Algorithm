@@ -10,7 +10,7 @@ void reverseInKGroup(queue<int> &q, int k, int unusedELmentCount) {
         // If yes then use stack to reverse it
         stack<int> st;
         for(int i=0; i<k; i++) {
-            // Push the 1st k in the stack
+            // Push the  1st k in the stack
             int element = q.front();
             q.pop();
             st.push(element);
