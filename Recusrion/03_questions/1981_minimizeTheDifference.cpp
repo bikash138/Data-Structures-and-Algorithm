@@ -42,3 +42,7 @@ int minimizeTheDifference(vector<vector<int>>& mat, int target) {
     int sum = 0, row = 0;
     return solve(mat, target, sum, row);
 }
+
+/*T.C -> For each element in a row (r) we are iterating over c columns.
+         Therefor t.c becomes c^r
+*/
