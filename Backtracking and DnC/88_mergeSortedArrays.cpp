@@ -32,4 +32,4 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     for(int k = 0; k < m + n; k++) {
         nums1[k] = ans[k];
     }
-    
+}
