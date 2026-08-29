@@ -22,6 +22,7 @@ void solve(string &s, int i, vector<string> &ans) {
         */
         swap(s[i], s[j]);
         solve(s, i+1, ans);
+        // This backtracking logic actually reverse the string as we passed the string by refrence
         swap(s[i], s[j]);
     }
 }    
@@ -36,3 +37,6 @@ vector<string> permutation(string s) {
 
     return ans;
 }
+
+// T.C -> As we are actually iterating for n! time hence the the T.C becomes n!
+//        But we are actually copying the results in a vector that adds up the T.C to n*n!   
