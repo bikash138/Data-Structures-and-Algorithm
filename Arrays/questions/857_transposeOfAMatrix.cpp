@@ -1,0 +1,18 @@
+#include<iostream>
+#include <vector>
+#include <numeric>
+using namespace std;
+
+vector<vector<int>> transpose(vector<vector<int>>& matrix) {
+    int row = matrix.size();
+    int col = matrix[0].size();
+    
+    // As row X col becomes col X row in transpose hence we created the vector accordingly
+    vector<vector<int>> ans(col, vector<int>(row));
+
+    for(int i=0; i<row; i++) {
+        for(int j=0; j<col; j++)
+        ans[j][i] = matrix[i][j];
+    }
+    return ans;
+}
