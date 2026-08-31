@@ -3,7 +3,6 @@
 #include <numeric>
 using namespace std;
 
-
 int diagonalSum(vector<vector<int>>& mat) {
     int n = mat.size();
 
