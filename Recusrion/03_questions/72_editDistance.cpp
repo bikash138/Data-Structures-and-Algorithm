@@ -3,7 +3,6 @@
 #include <numeric>
 using namespace std;
 
-
 int solve(string &word1, string &word2, int i, int j) {
     // Base Case
     if(i >= word1.length()) {
