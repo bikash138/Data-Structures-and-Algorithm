@@ -19,10 +19,22 @@ int findTarget(vector<int>& arr, int target) {
         if(arr[mid + 1] == target) return mid+1;
         
         if(target > arr[mid]) {
-            s = mid + 1;
+            // s = mid + 1;
+            /* 
+            This can be oprtimised as in the same iteration we had 
+            checked mid+1 for the target in the above code so we can 
+            directly move to mid+2
+            */
+            s = mid + 2;
         }
         else {
-            e = mid - 1;
+            // e = mid - 1;
+            /* 
+            This can also be optimised as in the same iteration we had 
+            checked mid-1 for the target in the above code so we can 
+            directly move to mid-2
+            */
+           e = mid - 2;
         }
     }
     return -1;
