@@ -4,7 +4,6 @@
 #include <algorithm>
 using namespace std;
 
-
 int search(vector<int>& nums, int target) {
     int s = 0;
     int e = nums.size() - 1;
