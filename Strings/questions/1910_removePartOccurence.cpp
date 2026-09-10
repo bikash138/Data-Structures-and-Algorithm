@@ -9,3 +9,8 @@ string removeOccurrences(string s, string part) {
     }
     return s;
 }
+
+// T.C -> O(n) for finding the part in the while loop 
+//        O(n/k) for again finding the same part but 
+//        this time the string is getting reduced by k(length of part)
+//        So T.C becomes -> O(n*n/k)
