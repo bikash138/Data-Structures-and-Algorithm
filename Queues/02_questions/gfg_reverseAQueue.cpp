@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<stack>
 using namespace std;
 
 queue<int> reverseAQueue(queue<int> &q) {
@@ -17,4 +18,18 @@ queue<int> reverseAQueue(queue<int> &q) {
     }
 
     return q;
+}
+
+void reverseQueueByRecusrion(queue<int> &q) {
+    if(q.empty()) {
+        return;
+    }
+
+    int value = q.front();
+
+    q.pop();
+
+    reverseQueueByRecusrion(q);
+
+    q.push(value);
 }
