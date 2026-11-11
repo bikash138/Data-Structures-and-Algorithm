@@ -83,20 +83,31 @@ void levelOrderTraversal(Node* root) {
 
     //inital state
     q.push(root);
+    q.push(NULL);
 
     while(!q.empty()) {
         Node* front = q.front();
         q.pop();
 
-        cout << front->data;
-
-        if(front->left != NULL) {
-            q.push(front->left);
+        if(front == NULL) {
+            // all the nodes of current has been printed
+            // go to the next line
+            cout << endl;
+            // This is to handle the infinite NULL insertion, if the queue is empty
+            // Otherwise Null will keep on getting pushed
+            if(!q.empty()) q.push(NULL);
         }
+        else {
+            cout << front->data;
 
-        if(front->right != NULL) {
-            q.push(front->right);
-        }
+            if(front->left != NULL) {
+                q.push(front->left);
+            }
+
+            if(front->right != NULL) {
+                q.push(front->right);
+            }
+        } 
     }
 }
 
