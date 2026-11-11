@@ -29,3 +29,67 @@ Node* buildTree() {
         return root;
     }
 }
+
+// NLR - preorder
+void preOrderTraversal(Node* root) {
+    // Base Case
+    if(root == NULL) {
+        return;
+    }
+    // N
+    cout << root->data << " ";
+    // L
+    preOrderTraversal(root->left);
+    // R
+    preOrderTraversal(root->right);
+}
+
+// LNR - inorder
+void inOrderTraversal(Node* root) {
+    // Base Case
+    if(root == NULL) {
+        return;
+    }
+    // L
+    inOrderTraversal(root->left);
+    // N
+    cout << root->data << " ";
+    // R
+    inOrderTraversal(root->right);
+}
+
+// LRN - post order
+void postOrderTraversal(Node* root) {
+    // Base Case
+    if(root == NULL) {
+        return;
+    }
+    // L
+    postOrderTraversal(root->left);
+    // R
+    postOrderTraversal(root->right);
+    // N
+    cout << root->data << " ";
+}
+
+int main () {
+    Node* root = buildTree();
+    cout << endl;
+
+    cout << "Printing Preorder Traversal: " << endl;
+    preOrderTraversal(root);
+
+    cout << endl;
+
+    cout << "Printing Postorder Traversal: " << endl;
+    postOrderTraversal(root);
+
+    cout << endl;
+
+    cout << "Printing Inorder Traversal: " << endl;
+    inOrderTraversal(root);
+
+    return 0;
+}
+
+// T.C of all types of traversal -> O(n) as we are travelling on all the nodes 
