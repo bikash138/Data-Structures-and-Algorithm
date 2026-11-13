@@ -24,8 +24,8 @@ public:
         }
 
         // current node
-        sum = sum + root->val;
-        temp.push_back(root->val);
+        sum = sum + root->data;
+        temp.push_back(root->data);
 
         //leaf node
         if(root->left == NULL && root->right == NULL) {
