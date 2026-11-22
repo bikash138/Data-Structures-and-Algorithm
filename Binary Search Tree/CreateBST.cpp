@@ -46,7 +46,7 @@ void preOrder(Node* root) {
     preOrder(root->left);
     preOrder(root->right);
 }
-
+// INORDER of BST is always sorted
 void inOrder(Node* root) {
     // LNR
     if(root == NULL) {

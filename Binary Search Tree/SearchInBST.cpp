@@ -1,3 +1,18 @@
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val){
+        this->data = val;
+        this->left = NULL;
+        this->right = NULL;
+    }
+};
+
 bool searchInBST(Node* root, int target){
     //Base Case-> If root is NULL
     if(root == NULL){
