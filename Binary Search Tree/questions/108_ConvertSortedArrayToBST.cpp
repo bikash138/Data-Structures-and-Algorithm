@@ -18,8 +18,13 @@ TreeNode* solve(vector<int> &inorder, int s, int e) {
     if(s>e) {
         return nullptr;
     }
-    // As the array is sorted we can use inorder to build the tree
-    // Mid element of the array will be the root
+    
+    /*
+        As the array is sorted we can use inorder to build the tree
+        Mid element of the array will be the root as the it is 
+        given that the height of the tree is balanced
+    */
+
     int mid = (s+e)/2;
     int element = inorder[mid];
     TreeNode* root = new TreeNode(element);
